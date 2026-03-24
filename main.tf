@@ -10,6 +10,7 @@ resource "aws_instance" "instance" {
 }
 
 resource "aws_route53_record" "cluster" {
+  count = 5
   zone_id = "Z02549774QMYGMZM7W06"
   name    = "${var.components[count.index]}-dev"
   type    = "A"
